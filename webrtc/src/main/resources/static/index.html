@@ -1,0 +1,78 @@
+<html>
+
+<head>
+<title>WebRTC demo</title>
+<!--Bootstrap only for styling-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!--Bootstrap only for styling-->
+</head>
+<style>
+.container {
+	background: rgb(148, 144, 144);
+	margin: 50px auto;
+	max-width: 80%;
+	text-align: center;
+	padding: 2%;
+}
+
+button {
+	margin: 1em;
+}
+
+input {
+	margin-top: 1em;
+}
+
+.footer {
+	background: rgb(148, 144, 144);
+	text-align: center;
+	padding: 2%;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+video {
+	width: 100%;
+}
+
+#videos {
+	display: grid;
+	grid-gap: 16px;
+	grid-template-columns: 1fr 3fr;
+}
+
+#self-view {
+	grid-column: 1;
+	background-color: black;
+}
+
+#remote-view {
+	grid-column: 2;
+	background-color: black;
+	height: 95vh;
+}
+</style>
+
+<body>
+	<div class="container">
+		<div id="chat-room">
+			<div id="videos">
+				<video id="self-view" autoplay></video>
+				<video id="remote-view" autoplay></video>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<h1>A Demo for messaging in WebRTC</h1>
+
+		<button type="button" class="btn btn-primary" onclick='createOffer()'>Create Offer</button>
+		<input id="messageInput" type="text" class="form-control" placeholder="message">
+		<button type="button" class="btn btn-primary" onclick='sendMessage()'>SEND</button>
+	</div>
+	<script src="client.js"></script>
+</body>
+
+</html>
